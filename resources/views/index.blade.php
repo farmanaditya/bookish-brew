@@ -306,7 +306,7 @@
                     var popupContent = `
 <div>
     <h3 style="margin-bottom: 10px;">${feature.properties.name}</h3>
-    <div style="text-align: justify; width: 200px;">
+    <div style="text-align: justify; width: 250px;">
         ${feature.properties.description}
     </div>
     <img src="{{ asset('storage/images') }}/${feature.properties.image}" width="200px" style="margin-top: 10px;">
