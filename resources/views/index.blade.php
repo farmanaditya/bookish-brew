@@ -217,6 +217,83 @@
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
 
+              // Create a GeoJSON layer for polygon data
+        var admin_diy = L.geoJson(null, {
+            style: function(feature) {
+                // Adjust this function to define styles based on your polygon properties
+                var value = feature.properties.admin_diy; // Change this to your actual property name
+                return {
+                    fillColor: getColor(value),
+                    weight: 2,
+                    opacity: 1,
+                    color: "red",
+                    dashArray: "3",
+                    fillOpacity: 0.5,
+                };
+            },
+            onEachFeature: function(feature, layer) {
+                // Adjust the popup content based on your polygon properties
+                var content =
+                    "KABUPATEN: " +
+                    feature.properties.KAB +
+                    "<br>";
+
+                layer.bindPopup(content);
+            },
+        });
+
+        // Function to generate a random color //
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Load GeoJSON //
+        fetch('storage/geojson/admin_diy.geojson')
+            .then(response => response.json())
+            .then(data => {
+                L.geoJSON(data, {
+                    style: function(feature) {
+                        return {
+                            opacity: 10,
+                            color: "blue",
+                            weight: 1.5,
+                            fillOpacity: 0.1,
+                            fillColor: getRandomColor(),
+                        };
+                    },
+                    onEachFeature: function(feature, layer) {
+                        var content = "Kabupaten : " + feature.properties.KAB;
+                        layer.on({
+                            click: function(e) {
+                                // Fungsi ketika objek diklik
+                                layer.bindPopup(content).openPopup();
+                            },
+                            mouseover: function(e) {
+                                // Tidak ada perubahan warna saat mouse over
+                                layer.bindPopup("Kabupaten : " + feature.properties.KAB, {
+                                    sticky: false
+                                }).openPopup();
+                            },
+                            mouseout: function(e) {
+                                // Fungsi ketika mouse keluar dari objek
+                                layer.resetStyle(e
+                                    .target); // Mengembalikan gaya garis ke gaya awal
+                                map.closePopup(); // Menutup popup
+                            },
+                        });
+                    }
+
+                }).addTo(map);
+            })
+            .catch(error => {
+                console.error('Error loading the GeoJSON file:', error);
+            });
+
             // Search coordinate form submission
             document.getElementById('coordinateForm').addEventListener('submit', function(event) {
                 event.preventDefault();
