@@ -23,6 +23,12 @@ use App\Http\Controllers\DashboardController;
 Route::get('/', [MapController::class, 'index'])->name('index');
 Route::get('/table', [MapController::class, 'table'])->name('table');
 
+// routes/web.php
+Route::get('/index-page', function () {
+    return view('index-page');
+});
+
+
 // create point
 Route::post('/store-point', [PointController::class, 'store'])->name('store-point');
 

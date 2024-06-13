@@ -14,6 +14,30 @@
             width: 100%;
             margin: 0%
         }
+
+        .search-control {
+            position: absolute;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            bottom: 20px;
+            right: 20px;
+            max-width: 300px;
+        }
+
+        .search-control form {
+            display: flex;
+            align-items: center;
+            /* Posisikan elemen secara vertikal di tengah */
+        }
+
+        .search-control .form-control {
+            width: 100%;
+        }
+
+        .search-control button {
+            margin-left: 10px;
+        }
     </style>
 @endsection
 </head>
@@ -21,6 +45,23 @@
 <body>
     @section('content')
         <div id="map"></div>
+
+        <!-- Coordinate Search Control -->
+        <div class="search-control">
+            <h6>Search Coordinate</h6>
+            <form id="coordinateForm">
+                <div class="row mb-3">
+                    <div class="col">
+                        <input type="text" class="form-control" id="latInput" name="lat" placeholder="Latitude">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" id="lngInput" name="lng" placeholder="Longitude">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </div>
+
 
         <!-- Modal Create Point -->
         <div class="modal fade" id="PointModal" tabindex="-1" aria-labelledby="PointModalLabel" aria-hidden="true">
@@ -168,13 +209,30 @@
         <script src="https://unpkg.com/terraformer-wkt-parser@1.1.2/terraformer-wkt-parser.js"></script>
         <script>
             //Map
-            var map = L.map('map').setView([-6.1753924, 106.8271528], 13);
+            var map = L.map('map').setView([-7.796785675841021, 110.36025241368662], 10);
 
             // Basemap
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19,
+                maxZoom: 20,
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
+
+            // Search coordinate form submission
+            document.getElementById('coordinateForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                var lat = parseFloat(document.getElementById('latInput').value);
+                var lng = parseFloat(document.getElementById('lngInput').value);
+
+                if (!isNaN(lat) && !isNaN(lng)) {
+                    map.setView([lat, lng], 15);
+                    L.marker([lat, lng]).addTo(map)
+                        .bindPopup('Coordinates: ' + lat + ', ' + lng)
+                        .openPopup();
+                } else {
+                    alert('Please enter valid coordinates.');
+                }
+            });
+
 
             /* Digitize Function */
             var drawnItems = new L.FeatureGroup();
@@ -306,7 +364,7 @@
                     var popupContent = `
 <div>
     <h3 style="margin-bottom: 10px;">${feature.properties.name}</h3>
-    <div style="text-align: justify; width: 250px;">
+    <div style="text-align: justify; width: 200px;">
         ${feature.properties.description}
     </div>
     <img src="{{ asset('storage/images') }}/${feature.properties.image}" width="200px" style="margin-top: 10px;">

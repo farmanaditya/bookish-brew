@@ -21,7 +21,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"> <i class="fa-solid fa-earth-africa"></i> {{ $title }}</a>
+            <a class="navbar-brand" href="#"> <i class="fa-solid fa-book-atlas"></i> {{ $title }}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -101,6 +101,8 @@
         </div>
     </div>
 
+
+
     @yield('content')
 
     {{-- leaflet js --}}
@@ -115,6 +117,25 @@
     @include('components.toast')
 
     @yield('script')
+
+    {{-- <!-- Footer Section -->
+    <footer class="ud-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ud-footer-widgets">
+                        <p class="ud-widget-desc">
+                            &copy; 2024 Bookish Brew. All Rights Reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer Section --> --}}
+
+
 </body>
+
 
 </html>
