@@ -24,6 +24,6 @@ Bookish Brew is a web application designed for book enthusiasts to explore, shar
 
 ## Bookish Brew Preview
 
-![Preview 1](storage/images/1preview.jpg) ![Preview 2](storage/images/2preview.jpg) ![Preview 3](storage/images/3preview.jpg) ![Preview 4](storage/images/4preview.jpg)
+![Preview 1](public/storage/images/1preview.jpg) ![Preview 2](public/storage/images/2preview.jpg) ![Preview 3](public/storage/images/3preview.jpg) ![Preview 4](public/storage/images/4preview.jpg)
 
 
