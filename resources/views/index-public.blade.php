@@ -280,7 +280,7 @@
                         </div>
 
                         <!-- Feature 4 -->
-                        <div class="col-xl-3 col-lg-3 col-sm-6">
+                        <div class="col-xl-3 col-lg-3 col-sm-6 mb-0">
                             <div class="ud-single-feature">
                                 <div class="ud-feature-icon">
                                     <i class="lni lni-customer"></i>
@@ -292,6 +292,7 @@
                                         book lovers, share recommendations, and become a part of our growing literary
                                         community.
                                     </p>
+                                    <a href="{{ route('register') }}" class=""><strong><u>Register Here</u></strong></a>
                                 </div>
                             </div>
                         </div>
@@ -304,6 +305,22 @@
             <section id="map-section" style="padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
                 <div id="map"></div>
             </section>
+            {{-- Footer --}}
+            <footer class="ud-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12" style="margin-bottom: 0px;">
+                            <div class="ud-footer-widgets">
+                                <p class="ud-widget-desc">
+                                    &copy; 2024 Bookish Brew. farmanadiya on Github -> <a
+                                        href="https://github.com/farmanaditya/bookish-brew.git" target="_blank"><i
+                                            class="fab fa-github" style="font-size: 24px; color: white;"></i></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
             <!-- End Map Section -->
         @endsection
 
@@ -484,20 +501,4 @@
             </script>
 
     </body>
-    {{-- Footer --}}
-    <footer class="ud-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="ud-footer-widgets">
-                        <p class="ud-widget-desc">
-                            &copy; 2024 Bookish Brew. farmanadiya on Github -> <a
-                                href="https://github.com/farmanaditya/bookish-brew.git" target="_blank"><i
-                                    class="fab fa-github" style="font-size: 24px; color: white;"></i></a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
 @endsection

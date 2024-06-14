@@ -53,7 +53,8 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#infoModal"> <i class="fa-solid fa-circle-info" ></i> Info</a>
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#infoModal"> <i
+                                class="fa-solid fa-circle-info"></i> Info</a>
                     </li>
 
 
@@ -93,8 +94,12 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <h2>Bookish Brew</h2>
+                    <p>This project is developed to fulfill the final assignment requirement for the Advanced Web
+                    Geospatial Programming (PGWL) course, a WebGIS project developed with Laravel. Discover bookstores
+                    and book-themed coffee shops throughout Yogyakarta.</p>
                     Farmana Ditya Alya Safitri <br>
-                    22/493937/SV/20758
+                    22/493937/SV/20758 <br>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

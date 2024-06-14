@@ -125,7 +125,7 @@
                                     placeholder="Fill point name">
                             </div>
                             <div class="mb-3">
-                                <label for="description" class="form-label">Descirption</label>
+                                <label for="description" class="form-label">Description</label>
                                 <textarea class="form-control" id="description" name="description" rows="3"></textarea>
                             </div>
                             <div class="mb-3">
