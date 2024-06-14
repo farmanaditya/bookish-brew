@@ -1,7 +1,7 @@
 
 
 # bookish-brew
-=======
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 
@@ -11,7 +11,7 @@ Bookish Brew is a web application designed for book enthusiasts to explore, shar
 
 - **Laravel**: PHP web application framework for robust backend development.
 - **jQuery & Bootstrap 5**: Frontend frameworks for responsive interface building.
-- **FontAwesome**: Library for high-quality icons used throughout the application.
+- **FontAwesome & Flaticon**: Library for high-quality icons used throughout the application.
 - **Leaflet Draw**: Leaflet plugin enabling drawing and editing of spatial data on maps.
 - **PostgreSQL & PostGIS**: Database management system for handling geospatial data.
 - **QGIS**: Integration for advanced geospatial data analysis and visualization.
