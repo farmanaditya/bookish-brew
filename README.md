@@ -25,6 +25,7 @@ Bookish Brew is a web application designed for book enthusiasts to explore, shar
 ![Preview 1](public/1preview.jpg)
 ![Preview 2](public/2preview.jpg)
 ![Preview 3](public/3preview.jpg)
-![Preview 4](public/4preview.jpg)
+![image](https://github.com/farmanaditya/bookish-brew/assets/109887977/81db02f7-b308-419f-bb6c-6475a5a83485)
+
 
 
